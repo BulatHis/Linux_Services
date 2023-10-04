@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "gNH6CmU7Nzl8ZVd68DXchXL/zFJb3V4vZ+MJVdOZJ8WQa9a533oFuh2RFjXYzdfjztS13M3fExAvZm+cn36ruA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Bulat\\University\\hisameevb.s\\Linux_Services\\timeclient\\timeclient\\timeclient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bulat\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.1\\microsoft.netcore.app.runtime.win-x64.7.0.1.nupkg.sha512",
+    "C:\\Users\\Bulat\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.1.nupkg.sha512",
+    "C:\\Users\\Bulat\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.1\\microsoft.aspnetcore.app.runtime.win-x64.7.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
