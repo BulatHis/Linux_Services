@@ -1,0 +1,2 @@
+[servers]
+server ansible_user=user ansible_host=192.168.211.10 ansible_port=22

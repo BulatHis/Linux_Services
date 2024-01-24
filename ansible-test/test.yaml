@@ -1,0 +1,57 @@
+---
+
+- name: Install Web Server
+  hosts: server
+  vars:
+    domain: "t02.sl.example"
+  tasks:
+    - name: Install Apache HTTP Server
+      ansible.builtin.apt:
+          update_cache: true
+          package:
+            - "apache2"
+    - name: Create dir
+      ansible.builtin.file:
+       path: /var/www/{{ domain }}/html
+       owner: "www-data"
+       group: "www-data"
+       state: "directory"
+    - name: Create dir CGI
+      ansible.builtin.file:
+       path: /var/www/{{ domain }}/cgi
+       owner: "www-data"
+       group: "www-data"
+       state: "directory"
+    - name: Copy HTML file
+      ansible.builtin.copy:
+         dest: "/var/www/{{ domain }}/html/default.html"
+         src: "default.html"
+         owner: "www-data"
+         group: "www-data"
+    - name: Copy CGI Script
+      ansible.builtin.copy:
+        dest: "/var/www/{{ domain }}/cgi/currentweather"
+        src: "currentweather"
+        owner: "www-data"
+        group: "www-data"
+        mode: "ug+x,o-x"
+    - name: Apache config
+      ansible.builtin.template:
+       dest: "/etc/apache2/sites-available/{{ domain }}.conf"
+       src: "{{ domain }}.conf.j2"
+       backup: yes
+    - name: Site enable
+      ansible.builtin.file:
+        dest: "/etc/apache2/sites-enabled/{{ domain }}.conf"
+        src: "../sites-available/{{ domain }}.conf"
+        state: link
+    - name: Enable CGI module
+      community.general.apache2_module:
+        name: "cgid"
+        state: "present"
+    - name: Reload Apache HTTP Server
+      ansible.builtin.service:
+        name: apache2
+        state: "restarted"
+...
+

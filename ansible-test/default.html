@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Текущая погода</title>
+</head>
+<body>
+<h1>Запрос текущей погоды для города</h1>
+<form method="post" action="/currentweather">
+<p><label>Город: <input type="text" name="city"></label></p>
+<fieldset>
+<legend>Выберите единицу измерения:</legend>
+<input type="radio" name="units" value="metric" id="radio1" checked>
+<label for="radio1">Градус Цельсия (°C)</label>
+<input type="radio" name="units" value="standard" id="radio2">
+<label for="radio2">Кельвин (K)</label>
+<input type="radio" name="units" value="imperial" id="radio3">
+<label for="radio3">Градус Фаренгейта (°F)</label>
+</fieldset>
+<p><input type="submit" value="Отправить"><input type="reset" value="Очистить"></p>
+</form>
+</body>
+</html>

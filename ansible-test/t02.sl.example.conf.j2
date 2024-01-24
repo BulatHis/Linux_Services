@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+        ServerName {{ domain }}
+        ServerAlias www.{{ domain }} site.{{ domain }}
+	ServerAdmin webmaster@{{ domain }}
+	DocumentRoot /var/www/{{ domain }}/html
+        DirectoryIndex default.html
+        ScriptAlias "/currentweather" "/var/www/{{ domain }}/cgi/currentweather"
+	ErrorLog ${APACHE_LOG_DIR}/{{ domain }}-error.log
+	CustomLog ${APACHE_LOG_DIR}/{{ domain }}-access.log combined
+</VirtualHost>
